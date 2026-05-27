@@ -10,7 +10,7 @@ const Tabs = ({tabs}) => {
         tabs.map(tab=><li><a onClick={()=>setContent(tab.content)}>{tab.title}</a></li>)
       }
       </ul>
-      {content && <p>This is the content for {content}.</p>}
+      {content && <p>{content}</p>}
     </div>
   )
 }
