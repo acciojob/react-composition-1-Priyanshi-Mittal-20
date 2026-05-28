@@ -1,16 +1,21 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-const Tabs = ({tabs}) => {
-  const [content,setContent]=useState("")
+const Tabs = ({ tabs }) => {
+  const [content, setContent] = useState(tabs[0].content)
+
   return (
     <div>
       <ul>
-      {
-        tabs.map(tab=><li><a onClick={()=>setContent(tab.content)}>{tab.title}</a></li>)
-      }
+        {tabs.map((tab, index) => (
+          <li key={index}>
+            <button onClick={() => setContent(tab.content)}>
+              {tab.title}
+            </button>
+          </li>
+        ))}
       </ul>
-      {content && <p>{content}</p>}
+
+      <p>{content}</p>
     </div>
   )
 }
