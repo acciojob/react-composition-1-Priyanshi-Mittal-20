@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 
 const Tabs = ({ tabs }) => {
-  const [content, setContent] = useState(tabs[0].content)
+  const [activeTab, setActiveTab] = useState(0)
 
   return (
     <div>
       <ul>
         {tabs.map((tab, index) => (
           <li key={index}>
-            <button onClick={() => setContent(tab.content)}>
+            <button onClick={() => setActiveTab(index)}>
               {tab.title}
             </button>
           </li>
         ))}
       </ul>
 
-      <p>{content}</p>
+      <p>{tabs[activeTab].content}</p>
     </div>
   )
 }
