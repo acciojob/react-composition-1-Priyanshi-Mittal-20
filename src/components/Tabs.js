@@ -8,9 +8,9 @@ const Tabs = ({ tabs }) => {
       <ul>
         {tabs.map((tab, index) => (
           <li key={index}>
-            <button onClick={() => setActiveTab(index)}>
+            <a href="#" onClick={() => setActiveTab(index)}>
               {tab.title}
-            </button>
+            </a>
           </li>
         ))}
       </ul>
